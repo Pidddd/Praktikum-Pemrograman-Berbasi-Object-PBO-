@@ -1,4 +1,4 @@
-package Jobsheet1;
+package Jobsheet1.Code;
 
 public class Kipas {
     private String brand;

@@ -1,4 +1,4 @@
-package Jobsheet1.BikeDemo;
+package Jobsheet1.Code;
 
 public class BikeDemo {
     public static void main(String[] args){

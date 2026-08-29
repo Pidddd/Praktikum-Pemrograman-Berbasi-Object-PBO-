@@ -1,4 +1,4 @@
-package Jobsheet1.BikeDemo;
+package Jobsheet1.Code;
 
 public class RoadBike extends Bike {
     private int tireWidth;
