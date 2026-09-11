@@ -1,9 +1,9 @@
 package Jobsheet3.id.ac.polinema;
 
 public class Account {
-    public String accountNumber;
-    public String ownerName;
-    public double balance;
+    private String accountNumber;
+    private String ownerName;
+    private double balance;
 
     public Account(String accountNumber,String ownerName, double balance) {
         this.accountNumber = accountNumber;
