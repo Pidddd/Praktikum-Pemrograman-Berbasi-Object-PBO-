@@ -13,5 +13,13 @@ public class Main {
         bank.addAccount(acc1);
         bank.addAccount(acc2);
         bank.printAllAccounts();
+
+        // Test business account
+        System.out.println("------ Testing Business Account ---");
+        Customer customer3 = new Customer("Amin Kekebalan", "0812-0000-0003");
+        BusinessAccount acc3 = new BusinessAccount("A003", customer3, 1000000, 5);
+        bank.addAccount(acc3); // Memasukkan akun bisnis ke dalam bank
+        bank.printAllAccounts();
+        acc3.printAccountType(); 
     }
 }
