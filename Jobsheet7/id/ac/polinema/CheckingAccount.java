@@ -14,7 +14,7 @@ public class CheckingAccount extends Account {
 
     @Override 
     protected boolean canWithdraw(double amount){
-        return amount > 0 && (getBalance() - amount) <= overdraftLimit;
+        return amount > 0 && amount <= getBalance() + overdraftLimit;
     }
 
     @Override
