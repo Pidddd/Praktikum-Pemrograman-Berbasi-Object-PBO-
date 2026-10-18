@@ -18,6 +18,7 @@ public class SavingsAccount extends Account {
         return amount > 0 && (getBalance() - amount) >= MINIMUM_BALANCE;
     }
 
+    @Override 
     public void printInfo(){
         super.printInfo();
         System.out.println("Account type: Saving, Interest rate: " + interestRate);

@@ -12,6 +12,17 @@ public class CheckingAccount extends Account {
         return overdraftLimit;
     }
 
+    @Override 
+    protected boolean canWithdraw(double amount){
+        return amount > 0 && (getBalance() - amount) <= overdraftLimit;
+    }
+
+    @Override
+    public void printInfo(){    
+        super.printInfo();
+        System.out.println("Account type: Checking, overdraft limit: " + overdraftLimit);
+    }
+
     public void printAccountType() {
         System.out.println("Account type: Checking, overdraft limit: " + overdraftLimit);
     }
