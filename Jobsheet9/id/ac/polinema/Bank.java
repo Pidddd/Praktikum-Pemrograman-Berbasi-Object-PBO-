@@ -1,4 +1,4 @@
-package id.ac.polinema.Js9;
+package id.ac.polinema;
 
 public class Bank {
     private Account[] accounts;

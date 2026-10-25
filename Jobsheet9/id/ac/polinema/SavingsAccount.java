@@ -1,6 +1,6 @@
-package id.ac.polinema.Js9;
+package id.ac.polinema;
 
-public class SavingsAccount extends Account {
+public class SavingsAccount extends Account implements InterestBearing {
     public static final double MINIMUM_BALANCE = 50000;
     private double interestRate;
 
@@ -28,9 +28,15 @@ public class SavingsAccount extends Account {
         System.out.println("Account type: Savings, interest rate: " + interestRate);
     }
 
-    // Implementasi method abstrak dari Account
     @Override
     public double monthlyFee() {
         return 0;
+    }
+
+    // Implementasi method dari interface InterestBearing
+    @Override
+    public void applyInterest() {
+        double interest = getBalance() * interestRate;
+        deposit(interest);
     }
 }

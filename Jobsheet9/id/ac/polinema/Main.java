@@ -1,4 +1,4 @@
-package id.ac.polinema.Js9;
+package id.ac.polinema;
 
 public class Main {
     public static void main(String[] args) {
@@ -26,5 +26,11 @@ public class Main {
         bank.printAllAccounts();
         System.out.println("");
         bank.printMonthlyFees();
+
+        // Tambahan uji Langkah 2
+        System.out.println("");
+        System.out.println("Before interest: " + savings.getBalance());
+        savings.applyInterest();
+        System.out.println("After interest: " + savings.getBalance());
     }
 }

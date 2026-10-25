@@ -1,4 +1,4 @@
-package id.ac.polinema.Js9;
+package id.ac.polinema;
 
 public class CheckingAccount extends Account {
     private static final double MONTHLY_FEE = 15000;

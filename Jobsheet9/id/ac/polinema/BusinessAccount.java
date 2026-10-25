@@ -1,4 +1,4 @@
-package id.ac.polinema.Js9;
+package id.ac.polinema;
 
 public class BusinessAccount extends Account {
     private static final double MINIMUM_BALANCE = 1000000;
