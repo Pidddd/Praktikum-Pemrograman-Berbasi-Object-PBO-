@@ -32,4 +32,8 @@ public class Bank {
             accounts[i].printInfo();
         }
     }
+
+    void printMonthlyFees() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

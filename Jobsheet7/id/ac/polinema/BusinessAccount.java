@@ -23,4 +23,8 @@ public class BusinessAccount extends Account {
         super.printInfo();
         System.out.println("Account type: Business, monthly fee: " + monthlyTransactionFee);
     }
+
+    public void printAccountType() {
+        System.out.println("Account type: Business, monthly fee: " + monthlyTransactionFee);
+    }
 }
