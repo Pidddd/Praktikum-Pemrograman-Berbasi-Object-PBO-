@@ -39,4 +39,19 @@ public class Bank {
             System.out.println(accounts[i].getAccountNumber() + " fee: " + accounts[i].monthlyFee());
         }
     }
+
+    public void processMonthEnd() {
+        for (int i = 0; i < count; i++) {
+            Account acc = accounts[i];
+            
+            // Polimorfisme interface
+            if (acc instanceof InterestBearing bearing) {
+                bearing.applyInterest();
+                System.out.println(acc.getAccountNumber() + " interest applied, new balance: " + acc.getBalance());
+            }
+            
+            // Polimorfisme method overriding
+            System.out.println(acc.getAccountNumber() + " monthly fee: " + acc.monthlyFee());
+        }
+    }
 }
