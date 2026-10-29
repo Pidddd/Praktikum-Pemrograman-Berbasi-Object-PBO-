@@ -15,5 +15,4 @@ public class BusinessAccount extends Account {
     public void printAccountType() {
         System.out.println("Account type: Business Monthly fee:" + monthlyTransactionFee);
     }
-    
 }
