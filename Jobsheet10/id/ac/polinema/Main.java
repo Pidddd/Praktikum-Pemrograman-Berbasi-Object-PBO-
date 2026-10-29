@@ -30,5 +30,23 @@ public class Main {
         // Tugas Mandiri 1
         System.out.println();
         bank.printAuditLog();
+
+        // Tugas Mandiri 2
+        System.out.println();
+        // Uji coba 1: Rekening terdaftar (A001)
+        try {
+            Account acc = bank.findAccount("A001");
+            System.out.println("Rekening ditemukan: " + acc.getAccountNumber() + " milik " + acc.getOwner().getName());
+        } catch (AccountNotFoundException e) {
+            System.out.println("Pencarian gagal: " + e.getMessage());
+        }
+
+        // Uji coba 2: Rekening tidak terdaftar (A999)
+        try {
+            Account acc = bank.findAccount("A999");
+            System.out.println("Rekening ditemukan: " + acc.getAccountNumber() + " milik " + acc.getOwner().getName());
+        } catch (AccountNotFoundException e) {
+            System.out.println("Pencarian gagal: " + e.getMessage());
+        }
     }
 }
