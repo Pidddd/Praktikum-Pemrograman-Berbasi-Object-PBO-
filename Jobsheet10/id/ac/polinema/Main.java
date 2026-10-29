@@ -21,11 +21,14 @@ public class Main {
         }
 
         // Langkah 2:
-
         Bank bank = new Bank(10);
         bank.addAccount(acc1);
         bank.addAccount(acc2);
         bank.addAccount(savings);
         bank.processMonthEnd();
+
+        // Tugas Mandiri 1
+        System.out.println();
+        bank.printAuditLog();
     }
 }
