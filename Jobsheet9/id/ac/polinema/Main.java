@@ -32,5 +32,10 @@ public class Main {
         System.out.println("Before interest: " + savings.getBalance());
         savings.applyInterest();
         System.out.println("After interest: " + savings.getBalance());
+
+        // Tugas Mandiri 1
+        System.out.println("");
+        System.out.println(acc2.auditLog());
+        System.out.println(checking.auditLog());
     }
 }
