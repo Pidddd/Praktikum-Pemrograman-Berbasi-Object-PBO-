@@ -44,13 +44,12 @@ public class Bank {
         for (int i = 0; i < count; i++) {
             Account acc = accounts[i];
 
-            // Polimorfisme interface
+            // Polimorfisme
             if (acc instanceof InterestBearing bearing) {
                 bearing.applyInterest();
                 System.out.println(acc.getAccountNumber() + " interest applied, new balance: " + acc.getBalance());
             }
 
-            // Polimorfisme method overriding
             System.out.println(acc.getAccountNumber() + " monthly fee: " + acc.monthlyFee());
         }
     }
