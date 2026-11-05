@@ -1,41 +1,40 @@
 package id.ac.polinema;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 public class Bank {
-    // Collections (LinkedHashMap) & Generics (<String, Account>) menggantikan array biasa
-    private Map<String, Account> accounts = new LinkedHashMap<>();
+    // DIP: Bergantung pada abstraksi (interface), bukan implementasi konkret
+    private AccountRepository repository;
+
+    // Dependency Injection: Repository diberikan dari luar melalui konstruktor
+    public Bank(AccountRepository repository) {
+        this.repository = repository;
+    }
 
     public boolean addAccount(Account account) {
-        if (accounts.containsKey(account.getAccountNumber())) {
+        if (repository.findByNumber(account.getAccountNumber()) != null) {
             return false;
         }
-        // Menyimpan pasangan key (nomor rekening) dan value (objek Account) ke Map
-        accounts.put(account.getAccountNumber(), account);
+        repository.save(account);
         return true;
     }
 
     public Account findAccount(String accountNumber) {
-        // Pencarian langsung via key tanpa perlu looping array
-        return accounts.get(accountNumber);
+        return repository.findByNumber(accountNumber);
     }
 
     public void printAllAccounts() {
-        // Iterasi nilai di dalam Map menggunakan values()
-        for (Account acc : accounts.values()) {
+        for (Account acc : repository.findAll()) {
             acc.printInfo();
         }
     }
 
     public void printMonthlyFees() {
-        for (Account acc : accounts.values()) {
+        for (Account acc : repository.findAll()) {
             System.out.println(acc.getAccountNumber() + " fee: " + acc.monthlyFee());
         }
     }
 
     public void processMonthEnd() {
-        for (Account acc : accounts.values()) {
+        for (Account acc : repository.findAll()) {
             if (acc instanceof InterestBearing bearing) {
                 bearing.applyInterest();
                 System.out.println(acc.getAccountNumber() + " interest applied, new balance: " + acc.getBalance());
@@ -44,7 +43,6 @@ public class Bank {
         }
     }
 
-    // Menampilkan riwayat transaksi dari objek Account
     public void printHistory(String accountNumber) {
         Account acc = findAccount(accountNumber);
         if (acc == null) {

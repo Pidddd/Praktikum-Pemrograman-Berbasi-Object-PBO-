@@ -24,14 +24,16 @@ public class Main {
             System.out.println("Withdrawal failed: " + e.getMessage());
         }
 
-        // Lankgah 1: Instansiasi Bank tanpa parameter kapasitas karena Map berukuran dinamis
-        Bank bank = new Bank();
+        // Langkah 3: Mengirim implementasi konkret repository ke konstruktor Bank
+        Bank bank = new Bank(new InMemoryAccountRepository());
+
+        // Langkah 1: Penambahan akun dan pemrosesan akhir bulan
         bank.addAccount(acc1);
         bank.addAccount(acc2);
         bank.addAccount(savings);
         bank.processMonthEnd();
 
-        // Langkah 2: Menampilkan riwayat mutasi transaksi rekening A003
+        // Langkah 2: Menampilkan riwayat transaksi A003
         bank.printHistory("A003");
     }
 }
