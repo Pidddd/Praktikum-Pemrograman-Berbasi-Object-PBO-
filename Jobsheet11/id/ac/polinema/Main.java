@@ -24,11 +24,14 @@ public class Main {
             System.out.println("Withdrawal failed: " + e.getMessage());
         }
 
-        // Instansiasi Bank tanpa parameter kapasitas karena Map berukuran dinamis
+        // Lankgah 1: Instansiasi Bank tanpa parameter kapasitas karena Map berukuran dinamis
         Bank bank = new Bank();
         bank.addAccount(acc1);
         bank.addAccount(acc2);
         bank.addAccount(savings);
         bank.processMonthEnd();
+
+        // Langkah 2: Menampilkan riwayat mutasi transaksi rekening A003
+        bank.printHistory("A003");
     }
 }
