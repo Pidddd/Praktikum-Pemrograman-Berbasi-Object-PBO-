@@ -24,14 +24,20 @@ public class Main {
             System.out.println("Withdrawal failed: " + e.getMessage());
         }
 
+        // Tugas Mandiri: Menambahkan objek BusinessAccount (A004)
+        Customer customer4 = new Customer("Budi", "0812-0000-0004");
+        BusinessAccount business = new BusinessAccount("A004", customer4, 2000000);
+
         // Langkah 3: Mengirim implementasi konkret repository ke konstruktor Bank
         Bank bank = new Bank(new InMemoryAccountRepository());
 
-        // Langkah 1: Penambahan akun dan pemrosesan akhir bulan
+        // Langkah 1 & Tugas Mandiri: Penambahan akun dan pemrosesan akhir bulan
         bank.addAccount(acc1);
         bank.addAccount(acc2);
         bank.addAccount(savings);
+        bank.addAccount(business);
         bank.processMonthEnd();
+        bank.printAllAccounts();
 
         // Langkah 2: Menampilkan riwayat transaksi A003
         bank.printHistory("A003");
